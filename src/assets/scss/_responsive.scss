@@ -1,0 +1,86 @@
+@include media-md {
+  .menu-btn {
+    visibility: hidden;
+    @include transition-none;
+    &__burger {
+      @include transition-none;
+      &::before {
+        @include transition-none;
+      }
+      &::after {
+        @include transition-none;
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    visibility: visible;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    height: auto;
+    padding: 25px 40px 25px 50px;
+    .menu-nav {
+      display: block;
+      transform: translateY(0);
+      height: 100%;
+      background: transparent;
+      text-align: right;
+
+      &__item {
+        display: inline;
+        padding-right: 1.5rem;
+      }
+
+      &__link {
+        color: #2d2e32;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.23s;
+        padding: 0rem;
+      }
+    }
+  }
+
+  .about__bio {
+    font-size: 1.5rem;
+  }
+
+  .projects {
+    &__bio-image {
+      height: 50vh;
+    }
+    &__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .text-secondary {
+      font-size: 3rem;
+    }
+  }
+
+  .contact__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-lg {
+  .projects {
+    &__items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include media-xl {
+  .projects__bio-image {
+    height: 50vh;
+  }
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
