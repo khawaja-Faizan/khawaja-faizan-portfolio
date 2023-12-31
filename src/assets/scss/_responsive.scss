@@ -1,4 +1,6 @@
+// **CSS for responsiveness starts here**
 @include media-md {
+  // Responsive css for navbar
   .menu-btn {
     visibility: hidden;
     @include transition-none;
@@ -12,16 +14,32 @@
       }
     }
   }
-
+  .nav-container {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.09);
+    height: auto;
+  }
   .nav {
-    position: fixed;
+    position: relative;
     visibility: visible;
     font-size: 1.1rem;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
     height: auto;
-    padding: 25px 40px 25px 50px;
+    padding: 23px 40px 23px 50px;
+    &.open {
+      h4 {
+        font-weight: 600;
+        text-align: center;
+        margin: 0em 0em 0em 0em;
+      }
+    }
+    h4 {
+      font-weight: 600;
+      text-align: center;
+      margin: 0em 0em 0em 1em;
+
+      @include transition-ease;
+    }
     .menu-nav {
       display: block;
       transform: translateY(0);
@@ -35,7 +53,7 @@
       }
 
       &__link {
-        color: #2d2e32;
+        color: $heading-text-color;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.23s;
@@ -44,43 +62,57 @@
     }
   }
 
-  .about__bio {
-    font-size: 1.5rem;
-  }
+  // Responsive css for home
+  .home {
+    .character {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5rem;
+      gap: 9em;
 
-  .projects {
-    &__bio-image {
-      height: 50vh;
-    }
-    &__items {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .text-secondary {
-      font-size: 3rem;
-    }
-  }
+      &__description {
+        font-size: 17px;
+        text-align: left;
+        max-width: 31rem;
+        color: $text-color;
 
-  .contact__list {
-    grid-template-columns: repeat(2, 1fr);
+        h1 {
+          color: $heading-text-color;
+          font-size: 3.5rem;
+          line-height: 1.2;
+          margin-bottom: 1.5rem;
+          font-weight: 700;
+        }
+
+        span {
+          justify-content: left;
+          gap: 2rem;
+          margin-top: 1em;
+          a {
+            color: $heading-text-color;
+            &:hover {
+              color: $secondary-color;
+            }
+            i {
+              font-size: xx-large;
+            }
+          }
+        }
+      }
+      .animated-bubble {
+        width: 19rem;
+        height: 19rem;
+        border: 2px solid $heading-text-color;
+        margin: 0 0 auto;
+      }
+    }
   }
 }
 
 @include media-lg {
-  .projects {
-    &__items {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  .contact__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @include media-xl {
-  .projects__bio-image {
-    height: 50vh;
-  }
-  .contact__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

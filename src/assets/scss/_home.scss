@@ -1,0 +1,74 @@
+// **CSS for home page starts here**
+
+.home {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+
+  .container {
+    margin: 0 auto;
+    max-width: 107rem;
+    padding: 0 4rem;
+  }
+  .character {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+
+    &__description {
+      font-size: 19px;
+      text-align: center;
+      h1 {
+        color: $heading-text-color;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        font-weight: 700;
+      }
+
+      span {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+        a {
+          color: $heading-text-color;
+          &:hover {
+            color: $secondary-color;
+          }
+          i {
+            font-size: larger;
+          }
+        }
+      }
+    }
+
+    .animated-bubble {
+      width: 19rem;
+      height: 19rem;
+      border: 2px solid $heading-text-color;
+      margin: 2em 0 auto;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      text-align: center;
+      background-image: url("../images/profile-img.png");
+      animation: animate 5s ease-in-out infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 70%;
+      }
+      100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+    }
+  }
+}

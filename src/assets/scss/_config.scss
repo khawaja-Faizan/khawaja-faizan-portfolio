@@ -1,10 +1,16 @@
 $primary-color: #272727;
 $secondary-color: #147efb;
+$heading-text-color: #2d2e32;
+$text-color: #555;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+body {
+  overflow-x: hidden;
+  font-family: Poppins, sans-serif !important;
 }
 
 @mixin transition-ease {
