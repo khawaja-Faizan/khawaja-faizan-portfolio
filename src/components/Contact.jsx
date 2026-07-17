@@ -25,25 +25,16 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     const data = new FormData(formRef.current);
-    const name = data.get("from_name");
-    const email = data.get("from_email");
-    const subject = data.get("subject");
-    const message = data.get("message");
     try {
-      // Send under both naming conventions so it works with EmailJS's
-      // default template ({{name}}, {{email}}, {{title}}) and custom ones.
       await emailjs.send(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.templateId,
         {
-          name,
-          email,
-          title: subject,
+          name: data.get("from_name"),
+          email: data.get("from_email"),
+          title: data.get("subject"),
+          message: data.get("message"),
           time: new Date().toLocaleString(),
-          from_name: name,
-          from_email: email,
-          subject,
-          message,
         },
         { publicKey: EMAILJS_CONFIG.publicKey }
       );
