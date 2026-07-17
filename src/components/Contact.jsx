@@ -81,7 +81,8 @@ export default function Contact() {
 
             <a
               href={CONTACT.cvFile}
-              download
+              download={CONTACT.cvDownloadName}
+              type="application/pdf"
               className="flex items-center justify-center gap-2 rounded-2xl border border-accent/40 p-4 text-sm font-semibold text-accent transition hover:bg-accent/10"
             >
               <Download size={17} /> Download My CV (PDF)

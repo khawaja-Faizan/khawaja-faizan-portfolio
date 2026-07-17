@@ -50,7 +50,8 @@ export default function Navbar() {
           <li>
             <a
               href={CONTACT.cvFile}
-              download
+              download={CONTACT.cvDownloadName}
+              type="application/pdf"
               className="inline-flex items-center gap-2 rounded-full border border-accent/40 px-4 py-1.5 text-sm font-semibold text-accent transition hover:bg-accent/10"
             >
               <Download size={15} /> CV
@@ -96,7 +97,8 @@ export default function Navbar() {
               <li className="mt-2">
                 <a
                   href={CONTACT.cvFile}
-                  download
+                  download={CONTACT.cvDownloadName}
+                  type="application/pdf"
                   className="inline-flex items-center gap-2 rounded-full border border-accent/40 px-4 py-2 text-sm font-semibold text-accent"
                 >
                   <Download size={15} /> Download CV

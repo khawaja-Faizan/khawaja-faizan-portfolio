@@ -8,6 +8,7 @@ export const CONTACT = {
   location: "Lahore, Pakistan",
   availability: "Open to Remote / International Roles",
   cvFile: "/Khawaja-Faizan-CV.pdf",
+  cvDownloadName: "Khawaja-Faizan-CV.pdf",
 };
 
 export const STATS = [
